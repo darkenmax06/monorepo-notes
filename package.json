@@ -1,0 +1,18 @@
+{
+  "name": "notesmonorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {"npm": ">=7.0.0"},
+  "workspaces":[
+    "./packages/*"
+  ],
+  "scripts": {
+    "start": "npm run build --workspace=notesapp && npm run start:mysql --workspace=notesapi",
+    "dev:app": "npm run dev --workspace=notesapp",
+    "dev": "npm run dev --workspace=notesapp | npm run dev:mysql --workspace=notesapi"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
